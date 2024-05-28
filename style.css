@@ -1,0 +1,184 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e1c688; /* Electric color */
+  margin: 0;
+  animation: glowBackground 5s infinite alternate; /* Adding glowing color change effect */
+}
+
+@keyframes glowBackground {
+  0% {
+    background-color: #e1c688;
+  }
+  50% {
+    background-color: #fffc9e; /* Yellow glow */
+  }
+  100% {
+    background-color: #e1c688;
+  }
+}
+
+#app {
+  background: #eeddb7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input, select, button, progress, .taskProgressRange {
+  margin: 5px 0;
+  padding: 10px;
+  width: calc(100% - 20px);
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.taskItem {
+  background: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  text-align: left;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.taskItem.low {
+  border-left: 5px solid green;
+  background-color: #e5f7e9;
+}
+
+.taskItem.medium {
+  border-left: 5px solid purple;
+  background-color: #f5e7fe;
+}
+
+.taskItem.high {
+  border-left: 5px solid red;
+  background-color: #ffd6d6;
+}
+
+.taskItem:hover {
+  background: #f1f1f1;
+}
+
+.taskItem h3 {
+  margin: 0;
+  color: #333;
+}
+
+.taskItem p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.taskItem small {
+  display: block;
+  margin: 5px 0;
+  color: #999;
+}
+
+.taskItem .progress {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.taskItem progress {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.taskItem .taskProgressRange {
+  flex: 1;
+  margin-left: 10px;
+}
+
+#sortOptions, #filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  #sortOptions, #filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #sortOptions select, #filters input, #filters select {
+    width: calc(100% - 20px);
+    margin: 5px auto;
+  }
+}
+
+/* Additional CSS for Progress Bar Color */
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e0e0e0;
+}
+
+progress::-webkit-progress-value {
+  background-color: #28a745;
+  transition: width 0.3s;
+}
+
+.taskItem.low progress::-webkit-progress-value {
+  background-color: green;
+}
+
+.taskItem.medium progress::-webkit-progress-value {
+  background-color: purple;
+}
+
+.taskItem.high progress::-webkit-progress-value {
+  background-color: red;
+}
+
+progress::-moz-progress-bar {
+  background-color: #28a745;
+}
+
+.taskItem.low progress::-moz-progress-bar {
+  background-color: green;
+}
+
+.taskItem.medium progress::-moz-progress-bar {
+  background-color: purple;
+}
+
+.taskItem.high progress::-moz-progress-bar {
+  background-color: red;
+}
